@@ -8,10 +8,6 @@ export const Button = () => {
     )
 }
 
-const kuken = () => {
-    console.log('kuken')
-}
-
 const getData = async () => {
     const result = await fetch('http://localhost:3001/strings')
     const data = await result.json()
