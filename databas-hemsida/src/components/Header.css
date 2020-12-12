@@ -1,0 +1,15 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+header {
+    height: 10vh;
+    /* background-color: blue; */
+    color: white;
+}
+
+h1 {
+    padding-top: 30px;
+    padding-left: 30px;
+}
