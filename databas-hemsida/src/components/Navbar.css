@@ -17,11 +17,10 @@ ul {
     list-style: none;
 }
 
-li {
+.navLinks {
     margin-right: 30px;
 }
 
 a {
     font-size: 20px;
-    
 }

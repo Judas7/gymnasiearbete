@@ -12,7 +12,7 @@ main {
     color: white;
 }
 
-section {
+.mainSection {
     /* border: solid black 2px; */
     height: 50%;
     width: 70%;
@@ -47,6 +47,7 @@ h2 {
 .commentsfieldLink {
     text-decoration: none;
     color: black;
+    height: 50%;
 }
 
 

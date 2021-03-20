@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.FormParent {
+    border: solid 2px yellow;
+    height: 600px;
+    display: flex;
+    flex-flow: row;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.sendForm {
+    border: solid 2px red;
+    display: flex;
+    flex-flow: column;
+
+    width: 45%;
+    height: 80%;
+
+    margin-right: 20px;
+}
+
+.recieveForm {
+    border: solid 2px blue;
+    display: flex;
+    flex-flow: column;
+
+    width: 45%;
+    height: 80%;
+
+    margin-left: 20px;
+}
+
+p {
+    color: white;
+}
