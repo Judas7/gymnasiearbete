@@ -9,7 +9,13 @@ header {
     color: white;
 }
 
-h1 {
+.headerTitle {
     padding-top: 30px;
     padding-left: 30px;
+}
+
+.homeLink {
+    text-decoration: none;
+    color: white;
+    font-size: 32px;
 }

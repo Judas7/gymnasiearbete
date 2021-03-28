@@ -3,5 +3,5 @@ export type Person = {
     LastName: String,
     City: String,
     Time: String,
-    Comments: String
+    Comment: String
 }
