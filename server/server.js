@@ -5,6 +5,8 @@ const app = express()
 const port = 3001
 const strings = ['a', 'b', 'c']
 // const db = require('./db')
+app.use(express.json());
+
 
 app.use(cors())
 
@@ -49,8 +51,11 @@ app.get('/Persons', (req, res) => {
 
 app.post('/Persons', (req, res) => {
     console.log("Connected!");
-    var sql = "INSERT INTO Persons (LastName, FirstName, City, Comment) VALUES ('Bert', 'Karlsson', 'Stockholm', 'Hejsvejs')";
-    connection.query(sql, function (err, result) {
+    req.body
+    console.log(req.body)
+    var sql = `INSERT INTO Persons (LastName, FirstName, City, Comment) VALUES ('${req.body.sendLastName}', '${req.body.sendFirstName}', '${req.body.sendCity}', '${req.body.sendComment}')`;
+    connection.query('UPDATE Persons SET TIME = curdate()')
+    connection.query(sql, function (err) {
       if (err){
         res.sendStatus(500)
         return
