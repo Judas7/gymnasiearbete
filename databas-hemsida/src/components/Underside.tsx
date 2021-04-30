@@ -31,21 +31,21 @@ class Underside extends React.Component<{}, State>{
                 </h1>
                     <p>
                         <label htmlFor="firstName">First Name:</label><br />
-                        <input type="text" id="firstName" /><br />
+                        <input type="text" id="firstName" value={this.state.input.sendFirstName} onChange={evt => this.updateFirstNameSend(evt.target.value)} /><br />
                     </p>
                     <p>
                         <label htmlFor="lastName">Last Name:</label><br />
-                        <input type="text" id="lastName" /><br />
+                        <input type="text" id="lastName" value={this.state.input.sendLastName} onChange={evt => this.updateLastNameSend(evt.target.value)}/><br />
                     </p>
                     <p>
                         <label htmlFor="city">City:</label><br />
-                        <input type="text" id="city" /><br />
+                        <input type="text" id="city" value={this.state.input.sendCity} onChange={evt => this.updateCitySend(evt.target.value)} /><br />
                     </p>
                     <p>
                         <label htmlFor="comment">Your Comment:</label><br />
-                        <input className="comment" type="text" id="comment" /><br />
+                        <input className="comment" type="text" id="comment" value={this.state.input.sendComment} onChange={evt => this.updateCommentSend(evt.target.value)} /><br />
                     </p>
-                    <button className="btnSend" onClick={sendPerson}>
+                    <button className="btnSend" onClick={this.onClickSendInput}>
                         Send comment
                 </button>
                 </section>
@@ -74,6 +74,9 @@ class Underside extends React.Component<{}, State>{
 
     }
 
+    onClickSendInput = () => {
+        sendPerson(this.state.input)
+    }
     onRecieveComment = (comment: string) => {
         this.setState({
             recievedCommentValue: comment
@@ -86,6 +89,29 @@ class Underside extends React.Component<{}, State>{
         });
     }
 
+    updateFirstNameSend = (firstName: string) => {
+        this.setState({
+            input: { ...this.state.input, sendFirstName: firstName }
+        })
+    }
+
+    updateLastNameSend = (lastName: string) => {
+        this.setState({
+            input: { ...this.state.input, sendLastName: lastName }
+        })
+    }
+
+    updateCitySend = (city: string) => {
+        this.setState({
+            input: { ...this.state.input, sendCity: city }
+        })
+    }
+
+    updateCommentSend = (comment: string) => {
+        this.setState({
+            input: { ...this.state.input, sendComment: comment }
+        })
+    }
 
 }
 
